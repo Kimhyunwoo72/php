@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 주소 -->
+    <!-- 
+        ekfvoddl0321.dothome.co.kr 
+    -->
+    <style>
+    
+html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+    
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+header h2 {
+	margin: 25px 10px;
+    font-size: 28px;
+    text-align: center;
+    color: cornsilk;
+}
+.menu__list {
+	margin: 10px auto;
+	display: table;
+	max-width: 1140px;
+	width: 50%;
+    margin: 0 auto;
+}
+.menu__list:after, .menu__list:before {
+	content: ""; 
+    clear : both;
+}
+nav.menu {
+    text-align: center;
+	background: #dbd9d9;
+	position: relative;
+	min-height: 45px;
+	height: 100%;
+}
+
+.menu > ul > li {
+	list-style: none;
+	display: inline-block;
+	color: #000;
+	line-height: 45px;
+	
+}
+.menu > ul li a, .xs-menu li a {
+	text-decoration: none;
+	color: #107af2;
+	 display:block;
+	 padding: 0px 24px;
+}
+.menu > ul li a:hover {
+	background:#dbe9f8;
+	color: #222;
+	transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-webkit-transition-duration: 0.3s;
+}
+.active{
+	text-decoration: underline;
+}
+.displaynone{
+	display: none;
+}
+
+.mega-menu {
+    left: 0;
+    margin-top: 3px;
+    position: absolute;
+    width: 100%;
+	padding:15px;
+	display:none;
+	transition-duration: 0.9s;
+}
+.mega-menu span ul span {
+    font-size: 20px !important;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/*--column--*/
+.responsive-img {
+    display: block;
+    max-width: 100%;
+}
+.left-images{
+    margin-right: 170px;
+}
+ .left-images, .left-categories-list {
+   float: left;
+}
+.categories-list {
+    display: block;
+}
+.categories-list ul {
+    text-align: left;
+}
+.categories-list ul span {
+    display: block;
+}
+.categories-list li {
+    display: inline-block;
+    line-height: normal;
+    margin: 0;
+    padding: 5px 0;
+}
+.categories-list li :hover{
+	background:inherit !important;
+}
+
+.display-on{
+    display:block;
+    transition-duration: 0.9s;
+}
+.drop-down ul li a{
+    color: #000;
+    font-size: 14px;
+}
+.categories-list > ul > span {
+    font-size: 15px !important;
+}
+    </style>
+</head>
+<body>
+    <div class="menu__list">
+        <nav class="menu">
+            <ul>
+                <li class="active">
+                    <a href="#">지도</a>
+                </li>
+                <li class="drop-down">
+                    <a href="#">뉴스</a>
+                 
+                    <div class="mega-menu fadeIn animated">
+                        <div class="mm-6column">
+                            <span class="left-images">
+                                <img  src="https://4.bp.blogspot.com/-faF-AemPFUM/U4ryP7pQRsI/AAAAAAAAEvA/fZ-hskCSln4/s1600/Magento%2Bthemes.jpg">
+                            </span>
+                        </div>
+                        <div class="mm-3column">
+                            <span class="categories-list">
+                                <ul>
+                                    <span>뉴스</span>
+                                    <li><a href="../news/news.php">뉴스 전체보기</a></li>
+                                    <li><a href="../news/news.php">주간이슈</a></li>
+                                </ul>
+                            </span>							
+                        </div>
+                        <div class="mm-3column">
+                            <span class="categories-list">
+                                <ul>
+                                    <span>게시판</span>
+                                    <li><a href="../board/board.php">자유게시판</a></li>
+                                    <li><a href="../notice/notice.php">공지사항</a></li>
+                                    <li><a href="../service/service.php">커뮤니티</a></li>
+                                </ul>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.mywebtricks.com/">커뮤니티</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+				//responsive menu toggle
+				$("#menutoggle").click(function() {
+					$('.xs-menu').toggleClass('displaynone');
+
+					});
+				//add active class on menu
+				$('ul li').click(function(e) {
+					e.preventDefault();
+					$('li').removeClass('active');
+					$(this).addClass('active');
+				});
+			//drop down menu	
+					$(".drop-down").hover(function() {
+						$('.mega-menu').addClass('display-on');
+					});
+					$(".drop-down").mouseleave(function() {
+						$('.mega-menu').removeClass('display-on');
+					});
+			
+			});
+
+	 
+</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+
+    <!-- META -->
+    <meta name="acthor" content="김현우">
+    <meta name="description" content="웹 표준을 준수한 사이트입니다.">
+    <meta name="keywords" content="웹표준, 웹접근성, 웹호환성, 사이트 제작, 포트폴리오">
+    <meta name="robots" content="all">
+
+    <!-- 아이콘 & 파비콘 -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icon114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/icon114.png">
+    <link rel="apple-touch-icon-precomposed" href="img/icon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="167x167" href="img/icon167.png" />
+
+    <!-- CSS style -->
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!--  주소
+        http://ekfvoddl0321.dothome.co.kr/php/html/board.html 
+    -->
+
+</head>
+
+<body>
+
+    <div id="skip">
+        <a href="#main">컨텐츠</a>
+        <a href="#footer">푸터 바로가기</a>
+    </div>
+    <!--skip-->
+
+    <header id="header">
+        <h1 class="logo">
+            <a href="https://Kimhyunwoo72.github.io/webs_class/">PHP<em>class</em></a>
+        </h1>
+        <nav class="menu">
+            <h2 class="ir_so">메인 메뉴</h2>
+            <ul>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">댓글</a></li>
+                <li><a href="#">게시판</a></li>
+                <li><a href="#">블로그</a></li>
+                <li><a href="#">관리자</a></li>
+            </ul>
+        </nav>
+        <div class="member">
+            <a href="#" class="active">회원가입</a>
+            <a href="#">로그인</a>
+        </div>
+    </header>
+
+    <main id="contents">
+        <h2 class="ir_so">컨텐츠 영역</h2>
+        <!-- section -->
+        <section id="board-type" class="section center mb100">
+            <div class="container">
+                <h3 class="section__title">자유게시판</h3>
+                <p class="section__desc">자유롭게 소통할 수 있는 게시판입니다. 자유롭게 작성해 주세요!</p>
+                <div class="board__inner">
+                    <div class="board__search">
+                        <form action="boradSearch.php" name="boradSearch" method="get">
+                            <fieldset>
+                                <legend class="ir_so">게시판 검색 영역</legend>
+                                <div>
+                                    <input type="search" name="search-form" class="search-form" placeholder="검색어를 입력하세요." aria-label="search" required>
+                                </div>
+                                <div>
+                                    <select name="search-option" class="search-option">
+                                        <option value="title">제목</option>
+                                        <option value="content">내용</option>
+                                        <option value="name">등록자</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button type="sumit" class="search-btn">검색</button>
+                                </div>
+                                <div>
+                                    <a href="boardwrite.php" class="search-btn black">글쓰기</a>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="board__table">
+                        <table class="hover">
+                            <thead>
+                                <colgroup>
+                                    <col style="width: 5%";>
+                                    <col>
+                                    <col style="width: 10%";>
+                                    <col style="width: 12%";>
+                                    <col style="width: 7%";>
+                                </colgroup>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>제목</th>
+                                    <th>등록자</th>
+                                    <th>등록일</th>
+                                    <th>조회수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>전기차 충전소 자리 많이 비는 곳!!</td>
+                                    <td>2022-03-04</td>
+                                    <td>혀누</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>빠르게 충전 하는법</td>
+                                    <td>2022-02-04</td>
+                                    <td>허니</td>
+                                    <td>220</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>이거 하는법 아는 사람?</td>
+                                    <td>2022-02-05</td>
+                                    <td>나는 모름</td>
+                                    <td>50</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>충전이 안되는데 아시는분 있나요?</td>
+                                    <td>2022-02-03</td>
+                                    <td>도와줘</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>주위 충전소 검색하는 방법!</td>
+                                    <td>2022-01-26</td>
+                                    <td>꿀팁</td>
+                                    <td>40</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>네비게이션에 즐겨찾기 넣는 방법!</td>
+                                    <td>2022-01-20</td>
+                                    <td>강즈</td>
+                                    <td>55</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>킵 해놓고 나중에 가야겠어요 </td>
+                                    <td>2022-01-15</td>
+                                    <td>모비유수</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>아파트 충전소 단지 극혐이네요/td>
+                                    <td>2022-03-04</td>
+                                    <td>혀누</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>가격이 왜케 오르는거임?</td>
+                                    <td>2022-01-04</td>
+                                    <td>혀누</td>
+                                    <td>탄핵</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>정부는 모하는지</td>
+                                    <td>2022-01-01</td>
+                                    <td>쥐박</td>
+                                    <td>250</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="board__pages">
+                        <ul>
+                            <li>
+                                <a href="#">처음으로</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                            <li>
+                                <a href="#">5</a>
+                            </li>
+                            <li>
+                                <a href="#">6</a>
+                            </li>
+                            <li>
+                                <a href="#">다음</a>
+                            </li>
+                            <li>
+                                <a href="#">마지막으로</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+
+    <footer id="footer" class="footer_type01 white gray">
+        <div class="container">
+            <h2 class="ir_so">푸터 바로가기 메뉴</h2>
+            <div class="foot_wrap">
+                <div>
+                    <h3>레이아웃 영역</h3>
+                    <ul>
+                        <li><a href="#"> 레이아웃 유형01</a></li>
+                        <li><a href="#"> 레이아웃 유형02</a></li>
+                        <li><a href="#"> 레이아웃 유형03</a></li>
+                        <li><a href="#"> 레이아웃 유형04</a></li>
+                        <li><a href="#"> 레이아웃 유형05</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>메뉴 영역</h3>
+                    <ul>
+                        <li><a href="#">메뉴 유형01</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>메인 영역</h3>
+                    <ul>
+                        <li><a href="#"> 이미지 유형01</a></li>
+                        <li><a href="#"> 동영상 유형01</a></li>
+                        <li><a href="#"> 슬라이드 유형01</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>컨텐츠 영역</h3>
+                    <ul>
+                        <li><a href="#"> 텍스트 유형01</a></li>
+                        <li><a href="#"> 이미지 유형02</a></li>
+                        <li><a href="#"> 이미지/텍스트03</a></li>
+                        <li><a href="#"> 카드 유형04</a></li>
+                        <li><a href="#"> 배너 유형05</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>게시판 영역</h3>
+                    <ul>
+                        <li><a href="board.html">게시판</a></li>
+                        <li><a href="boardview.html">게시판 보기</a></li>
+                        <li><a href="boardModify.html">게시판 수정</a></li>
+                        <li><a href="boardWrite.html">게시판 쓰기</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="#"> 웹표준 사이트</a></li>
+                        <li><a href="#"> 반응형 사이트</a></li>
+                        <li><a href="#"> 패럴랙스 사이트</a></li>
+                        <li><a href="#"> 포트폴리오 사이트</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <address>
+            &copy; 2022 Kimhyunwoo. All rights reserved.
+            <div class="footer-sns">
+                <ul>
+                    <li><a href="#" class="ir_pm">페이스북</a></li>
+                    <li><a href="#" class="ir_pm">인스타그램</a></li>
+                    <li><a href="#" class="ir_pm">카카오톡</a></li>
+                    <li><a href="#" class="ir_pm">블로그</a></li>
+                </ul>
+            </div>
+        </address>
+    </footer>
+</body>
+
+</html>
